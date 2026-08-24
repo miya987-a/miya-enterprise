@@ -77,3 +77,43 @@ footer{background:#041225;color:#b9c3cc}
  .footer{padding:28px 0;flex-direction:column;align-items:flex-start}
 }
 
+/* ব্যানার সেকশনের ডিজাইন */
+.banner-section {
+  width: 100%;
+  overflow: hidden;
+  background-color: #0b132b;
+}
+
+.banner-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* লেখার আলাদা সেকশনের ডিজাইন */
+.hero-intro-section {
+  background-color: #0b132b; /* ব্যাকগ্রাউন্ড থিম কালার */
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.hero-intro-section h1 {
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin: 15px 0;
+}
+
+.hero-intro-section p {
+  color: #d1d5db;
+  max-width: 750px;
+  margin: 0 auto 25px auto;
+  line-height: 1.6;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+}
+
+
