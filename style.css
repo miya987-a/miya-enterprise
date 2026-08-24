@@ -2,15 +2,15 @@
 :root{--navy:#263238;--deep:#061a36;--gold:#c9a227;--white:#fff;--text:#263238;--muted:#64717a;--light:#f5f7f8}
 html{scroll-behavior:smooth}
 body{margin:0;font-family:Roboto,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.65}
-h1,h2,h3{font-family:Lato,Arial,sans-serif;line-height:1.15;margin:0 0 16px}
+h1,h2,h3{font-family:Lato,Arial,sans-serif;line-height:1.15;margin:0 0 16px;color:var(--text)}
 h1{font-size:clamp(32px,5vw,56px)}
 h2{font-size:clamp(28px,4vw,42px)}
-h3{font-size:22px}
+h3{font-size:20px;color:var(--navy)}
 p{margin:0 0 16px}
 a{text-decoration:none;color:inherit}
 .container{width:min(1120px,92%);margin:auto}
 
-/* হেডার */
+/* হেডার ও মেনু */
 .site-header{position:sticky;top:0;z-index:20;background:rgba(6,26,54,.97);border-bottom:1px solid rgba(201,162,39,.35)}
 .nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;color:#fff;font-family:Lato;font-weight:800;letter-spacing:.08em}
@@ -19,7 +19,7 @@ nav{display:flex;gap:26px;color:#fff;font-weight:600}
 nav a:hover{color:var(--gold)}
 .menu-toggle{display:none;border:0;background:transparent;color:#fff;font-size:26px}
 
-/* ১. আলাদা ব্যানার ইমেজ সেকশন */
+/* ব্যানার ছবি সেকশন */
 .banner-section {
   width: 100%;
   background-color: var(--deep);
@@ -32,7 +32,7 @@ nav a:hover{color:var(--gold)}
   display: block;
 }
 
-/* ২. আলাদা টেক্সট সেকশন */
+/* ব্যানার টেক্সট সেকশন */
 .hero-intro-section {
   background-color: var(--deep);
   color: #fff;
@@ -55,7 +55,7 @@ nav a:hover{color:var(--gold)}
 .eyebrow{color:var(--gold);font-weight:800;letter-spacing:.16em;font-size:13px;margin-bottom:15px}
 .eyebrow.dark{color:#806719}
 
-/* বাটন */
+/* বাটনসমূহ */
 .hero-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:18px}
 .btn{display:inline-block;padding:13px 24px;border-radius:7px;font-weight:800;border:1px solid transparent}
 .btn-gold{background:var(--gold);color:#071a31}
@@ -68,29 +68,37 @@ nav a:hover{color:var(--gold)}
 .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:20px 0;text-align:center;gap:15px;color:#f3f5f7;font-size:14px}
 
 /* মূল সেকশনসমূহ */
-.section{padding:88px 0}
+.section{padding:70px 0}
 .section-light{background:var(--light)}
 .section-dark{background:var(--deep);color:#fff}
+.section-dark h2{color:#fff}
 .section-heading{max-width:720px;margin:0 auto 46px;text-align:center}
 .section-heading>p:last-child{color:var(--muted)}
 
+/* সার্ভিস কার্ড */
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
 .card{padding:30px;background:#fff;border:1px solid #e4e8eb;border-radius:14px;box-shadow:0 10px 30px rgba(6,26,54,.07);transition:.2s}
 .card:hover{transform:translateY(-5px);border-color:rgba(201,162,39,.6)}
+.card h3{color:var(--navy);font-size:20px}
 .icon{font-size:34px;margin-bottom:18px}
 .card p,.features p,.step p{color:var(--muted)}
 
 .two-col{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
 .section-dark .two-col p{color:#d9e1e8}
 
+/* ফিচার ও স্টেপস */
 .features{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
 .features>div{padding:28px;border-left:4px solid var(--gold);background:#fff;border-radius:8px;box-shadow:0 8px 25px rgba(6,26,54,.06)}
+.features h3{color:var(--navy)}
 
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .step{padding:28px;background:#fff;border-radius:12px}
 .step span{display:inline-block;color:var(--gold);font-family:Lato;font-weight:900;font-size:30px;margin-bottom:15px}
+.step h3{color:var(--navy)}
 
+/* কন্টাক্ট ও ফুটার */
 .contact{background:var(--deep);color:#fff}
+.contact h2{color:#fff}
 .contact-box{display:flex;justify-content:space-between;align-items:center;gap:40px}
 .contact-box>div:first-child{max-width:700px}
 .contact-box p:not(.eyebrow){color:#d9e1e8}
@@ -101,7 +109,7 @@ footer{background:#041225;color:#b9c3cc}
 .footer strong{color:#fff;font-family:Lato;letter-spacing:.1em}
 .footer p{margin:5px 0}
 
-/* রেসপনসিভ (মোবাইল ও ট্যাবলেট) */
+/* রেসপনসিভ ডিজাইন */
 @media(max-width:850px){
  nav{display:none;position:absolute;left:0;right:0;top:76px;background:#061a36;padding:18px 4%;flex-direction:column;gap:14px;border-top:1px solid rgba(201,162,39,.35)}
  nav.open{display:flex}
