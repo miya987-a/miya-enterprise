@@ -77,19 +77,96 @@ footer{background:#041225;color:#b9c3cc}
  .footer{padding:28px 0;flex-direction:column;align-items:flex-start}
 }
 
-section:first-of-type, div[class*="banner"], div[class*="hero"] {
-  position: relative !important;
+/* --- মূল ব্যানারের চূড়ান্ত সমাধান --- */
+
+/* ১. ব্যানার সেকশনকে ফোনের জন্য ঠিক করা */
+section:first-of-type,
+[class*="hero"],
+[class*="banner"] {
+    position: relative !important;
+    width: 100% !important;
+    min-height: 50vh !important; /* ফোনের স্ক্রিনের অর্ধেক উচ্চতা অন্তত নেবে */
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background-color: transparent !important; /* আগের সব ব্যাকগ্রাউন্ড কালার মুছে ফেলা */
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
 }
 
-section:first-of-type::before, div[class*="banner"]::before, div[class*="hero"]::before {
-  content: "" !important;
-  position: absolute !important;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(10, 25, 47, 0.88) !important;
-  z-index: 1 !important;
+/* ২. ব্যানার ছবিকে পুরো পেজে ফিট এবং স্পষ্ট করা */
+section:first-of-type img,
+[class*="hero"] img,
+[class*="banner"] img {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* ছবিটি কাটবে না, পুরোটা ফিট হবে */
+    object-position: center center !important; /* ছবিটিকে মাঝখানে রাখবে */
+    z-index: 1 !important;
+    
+    /* ছবিটির ব্রাইটনেস কমিয়ে ডার্ক করার জন্য */
+    filter: brightness(60%) contrast(110%) !important; 
 }
 
-section:first-of-type *, div[class*="banner"] *, div[class*="hero"] * {
-  position: relative !important;
-  z-index: 2 !important;
+/* ৩. ব্যানার সেকশনের পেছনের কোনো কালার থাকলে তা মুছে ফেলা */
+section:first-of-type::before,
+section:first-of-type::after,
+[class*="hero"]::before,
+[class*="banner"]::before {
+    display: none !important;
+}
+
+/* ৪. ব্যানারের কন্টেন্ট (লেখা ও বাটন) ছবির ওপরে স্পষ্ট করা */
+section:first-of-type > div,
+[class*="hero"] > div,
+[class*="banner"] > div {
+    position: relative !important;
+    z-index: 2 !important; /* ছবি ও ওভারলের ওপরে কন্টেন্ট থাকবে */
+    text-align: center !important;
+    width: 90% !important;
+    max-width: 800px !important;
+    margin: 0 auto !important;
+}
+
+/* ৫. লেখার টেক্সট শ্যাডো দিয়ে আরও স্পষ্ট করা */
+section:first-of-type h1,
+section:first-of-type p,
+section:first-of-type small,
+[class*="hero"] h1,
+[class*="hero"] p,
+[class*="hero"] small {
+    color: white !important; /* সব লেখা সাদা */
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 1) !important; /* ডার্ক টেক্সট শ্যাডো */
+}
+
+section:first-of-type h1,
+[class*="hero"] h1 {
+    font-size: 1.8rem !important; /* বড় লেখা ফোনে একটু ছোট করা */
+    margin-bottom: 10px !important;
+}
+
+section:first-of-type p,
+[class*="hero"] p {
+    font-size: 1rem !important; /* ছোট লেখা ফোনের জন্য ঠিক করা */
+    margin-bottom: 20px !important;
+}
+
+/* ৬. বাটনগুলোকে ছবির ওপর স্পষ্ট করা */
+[class*="btn-hero"] {
+    background-color: #ffd700 !important; /* সোনালী কালার */
+    color: #000 !important; /* কালো লেখা */
+    z-index: 3 !important;
+    position: relative !important;
+}
+
+[class*="btn-hero-outline"] {
+    background-color: transparent !important;
+    border: 2px solid white !important;
+    color: white !important;
+    z-index: 3 !important;
+    position: relative !important;
 }
